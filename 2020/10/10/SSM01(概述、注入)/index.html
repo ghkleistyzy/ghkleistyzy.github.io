@@ -5,16 +5,20 @@
   
 
   
-  <title>Yzy</title>
+  <title>SSM01(概述、注入) | Yzy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个小博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yzy">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="1、Spring概述 开源的免费框架，是一个容器，可以管理所有的组件(类)； 轻量级的、非入侵的框架，不依赖于Spring的API 控制反转(IOC)和面向切面编程(AOP) 支持事务处理，支持对框架整合 组件化、一站式 spring模块划分  Test：Spring的单元测试模块 Core Container：核心容器(IOC)，包括4部分： spring-core：提供了框架的基本组成部分，包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM01(概述、注入)">
+<meta property="og:url" content="http://yoursite.com/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/index.html">
 <meta property="og:site_name" content="Yzy">
-<meta property="og:description" content="一个小博客">
+<meta property="og:description" content="1、Spring概述 开源的免费框架，是一个容器，可以管理所有的组件(类)； 轻量级的、非入侵的框架，不依赖于Spring的API 控制反转(IOC)和面向切面编程(AOP) 支持事务处理，支持对框架整合 组件化、一站式 spring模块划分  Test：Spring的单元测试模块 Core Container：核心容器(IOC)，包括4部分： spring-core：提供了框架的基本组成部分，包">
+<meta property="og:image" content="f:%5C%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CSSM%5Cspring%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86.png">
+<meta property="article:published_time" content="2020-10-10T12:47:03.154Z">
+<meta property="article:modified_time" content="2020-10-12T13:07:55.647Z">
 <meta property="article:author" content="Kleistyzy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="f:%5C%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CSSM%5Cspring%E6%A8%A1%E5%9D%97%E5%88%92%E5%88%86.png">
   
     <link rel="alternate" href="/atom.xml" title="Yzy" type="application/atom+xml">
   
@@ -63,9 +67,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-SSM01(概述、注入)" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-SSM01(概述、注入)" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/" class="article-date">
   <time datetime="2020-10-10T12:47:03.154Z" itemprop="datePublished">2020-10-10</time>
@@ -78,8 +80,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/">SSM01(概述、注入)</a>
+    <h1 class="article-title" itemprop="name">
+      SSM01(概述、注入)
     </h1>
   
 
@@ -223,111 +225,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-spring1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/spring1/" class="article-date">
-  <time datetime="2020-08-06T09:33:07.579Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/06/spring1/">spring1</a>
-    </h1>
+    <a href="/2020/08/06/spring1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">spring1</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、IOC"><a href="#一、IOC" class="headerlink" title="一、IOC"></a>一、IOC</h2><p>1.什么是IOC</p>
-<p>（1）控制反转，把对象创建和对象之间的调用过程，交给spring进行管理。</p>
-<p>（2）使用IOC目的：为了耦合度降低</p>
-<p>（3）做入门案例就是IOC实现</p>
-<p>2.IOC底层原理</p>
-<p>（1）xml解析、工厂模式、反射</p>
-<p>3.图片解释IOC底层原理</p>
-<p>（1）工厂模式<br><img src="https://i.loli.net/2020/08/06/xHVbrU6S4WAmi75.png" alt=""></p>
-<p>（2）IOC<br><img src="https://i.loli.net/2020/08/06/8EFeu9VlZU5mbpO.png" alt=""></p>
-<h2 id="二、IOC接口"><a href="#二、IOC接口" class="headerlink" title="二、IOC接口"></a>二、IOC接口</h2><p>1.IOC思想基于IOC容器完成，IOC底层对象就是对象工厂</p>
-<p>2.Spring提供IOC容器两种实现方式（两个接口）</p>
-<p>（1）BeanFactory：IOC容器基本实现，是Spring内部接口，不提供开发人员进行使用</p>
-<p>*加载配置文件时候不会创建对象，在获取对象（使用）才会创建对象</p>
-<p>（2）ApplicationContext：BeanFactory接口的子接口，功能更加强大</p>
-<p>*加载配置文件的时候就会把配置文件中的对象创建</p>
-<p>3.ApplicationContext接口有实现类</p>
-<h2 id="三、IOC操作Bean管理"><a href="#三、IOC操作Bean管理" class="headerlink" title="三、IOC操作Bean管理"></a>三、IOC操作Bean管理</h2><p>1.什么是Bean管理</p>
-<p>（0）Bean管理指的是两个操作</p>
-<p>（1）Spring创建对象</p>
-<p>（2）Spring注入属性</p>
-<p>2.Bean管理操作有两种方式</p>
-<p>（1）基于xml配置文件方式实现</p>
-<p>（2）基于注解方式实现</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/spring1/" data-id="ckdzczx7p0001gwvdadmug9ia" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-第一篇文章力扣169" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%8A%9B%E6%89%A3169/" class="article-date">
-  <time datetime="2020-07-07T12:59:14.427Z" itemprop="datePublished">2020-07-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%8A%9B%E6%89%A3169/">第一篇文章力扣169</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#第一篇文章<br>##1. 问题描述</p>
-<blockquote>
-<p>leetcode题号：169</p>
-</blockquote>
-<p>  给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。你可以假设数组是非空的，并且给定的数组总是存在多数元素。<br>##2. 问题思路</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/07/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%8A%9B%E6%89%A3169/" data-id="ckdzczx750000gwvdb4v0182g" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
