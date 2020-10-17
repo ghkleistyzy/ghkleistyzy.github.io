@@ -1,222 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+extends includes/layout.pug
 
-  
-  <title>Lambda | Yzy</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Lambda表达式">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Lambda">
-<meta property="og:url" content="http://yoursite.com/2020/10/17/Lambda/index.html">
-<meta property="og:site_name" content="Yzy">
-<meta property="og:description" content="Lambda表达式">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-17T13:20:03.981Z">
-<meta property="article:modified_time" content="2020-10-17T13:19:51.074Z">
-<meta property="article:author" content="Kleistyzy">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Yzy" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+block content
+  article#post(class="")
+    if top_img === false
+      include includes/header/post-info.pug
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+    #article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
+        
+    if theme.reward.enable
+      !=partial('includes/post/reward', {}, {cache:theme.fragment_cache})
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Yzy</a>
-      </h1>
+    //- ad
+    if theme.ad && theme.ad.post
+      .post-ad!=theme.ad.post
+
+    include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
+
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache:theme.fragment_cache})
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">未来不迎,当时不杂,过往不恋。</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Lambda" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/17/Lambda/" class="article-date">
-  <time datetime="2020-10-17T13:20:03.981Z" itemprop="datePublished">2020-10-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Lambda
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h1><a id="more"></a>
-
-<h2 id="1-1-体验Lambda表达式"><a href="#1-1-体验Lambda表达式" class="headerlink" title="1.1 体验Lambda表达式"></a>1.1 体验Lambda表达式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	  </span><br><span class="line"><span class="comment">//传统做法（需要创一个MyRunnable类）</span></span><br><span class="line">MyRunnable my=<span class="keyword">new</span> MyRunnable();</span><br><span class="line">	  Thread t=<span class="keyword">new</span> Thread(my);</span><br><span class="line">	  t.start();</span><br><span class="line"><span class="comment">//匿名内部类</span></span><br><span class="line"> <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"多线程程序启动了"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;).start();</span><br><span class="line"><span class="comment">//Lambda表达式</span></span><br><span class="line">	  <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">		  System.out.println(<span class="string">"多线程程序启动了"</span>);</span><br><span class="line">	  &#125;).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-Lambda表达式的标准格式"><a href="#1-2-Lambda表达式的标准格式" class="headerlink" title="1.2 Lambda表达式的标准格式"></a>1.2 Lambda表达式的标准格式</h2><p>①Lambda表达式代码分析</p>
-<p>():里面没有内容，可以堪称方法形式参数为空</p>
-<p>-&gt;:用箭头指向后面要做的事情</p>
-<p>{}:代码块，可以看成是方法体中的内容</p>
-<p>格式：(形式参数)-&gt;{代码块}</p>
-<p>形式参数：如果有多个参数，参数之间用逗号隔开</p>
-<h2 id="1-3-Lambda的省略模式"><a href="#1-3-Lambda的省略模式" class="headerlink" title="1.3 Lambda的省略模式"></a>1.3 Lambda的省略模式</h2><p>参数类型可以省略，要省略就都省略，不能只省略一个</p>
-<p>如果参数只有个，那么小括号可以省略</p>
-<p>如果代码块语句只有一条，可以省略大括号和分号，如果是return，return也需要省略。</p>
-<h2 id="1-4-Lambda注意事项"><a href="#1-4-Lambda注意事项" class="headerlink" title="1.4 Lambda注意事项"></a>1.4 Lambda注意事项</h2><p>使用Lambda必须要有接口，并且要求接口中有且仅有一个抽象手法</p>
-<p>必须有上下文环境，才能推到出Lambda对应的接口</p>
-<h2 id="1-5-Lambda表达式和匿名内部类的区别"><a href="#1-5-Lambda表达式和匿名内部类的区别" class="headerlink" title="1.5 Lambda表达式和匿名内部类的区别"></a>1.5 Lambda表达式和匿名内部类的区别</h2><p>匿名内部类：可以是接口、抽象类、具体类，接口中大于一个抽象方法只能使用匿名内部类，编译生成一个单独的.class字节码文件</p>
-<p>Lambda：只能是接口，接口中只有一个抽象方法才能使用，没有单独字节码文件，对应的字节码运行时动态生成。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/10/17/Lambda/" data-id="ckgdpkvyi0000twvdebyj5toi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">网络编程入门</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/10/17/Lambda/">Lambda</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">网络编程入门</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/">SSM01(概述、注入)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 Kleistyzy<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
