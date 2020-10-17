@@ -6,14 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Yzy</title>
+  <title>Lambda | Yzy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个小博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yzy">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="Lambda表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lambda">
+<meta property="og:url" content="http://yoursite.com/2020/10/17/Lambda/index.html">
 <meta property="og:site_name" content="Yzy">
-<meta property="og:description" content="一个小博客">
+<meta property="og:description" content="Lambda表达式">
+<meta property="article:published_time" content="2020-10-17T13:20:03.981Z">
+<meta property="article:modified_time" content="2020-10-17T13:19:51.074Z">
 <meta property="article:author" content="Kleistyzy">
 <meta name="twitter:card" content="summary">
   
@@ -151,103 +153,172 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Lambda" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Lambda
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/Lambda/" class="archive-article-date">
+
+        
+        <a href="/2020/10/17/Lambda/" class="archive-article-date">
   	<time datetime="2020-10-17T13:20:03.981Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/Lambda/">Lambda</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h1><a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="1-1-体验Lambda表达式"><a href="#1-1-体验Lambda表达式" class="headerlink" title="1.1 体验Lambda表达式"></a>1.1 体验Lambda表达式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	  </span><br><span class="line"><span class="comment">//传统做法（需要创一个MyRunnable类）</span></span><br><span class="line">MyRunnable my=<span class="keyword">new</span> MyRunnable();</span><br><span class="line">	  Thread t=<span class="keyword">new</span> Thread(my);</span><br><span class="line">	  t.start();</span><br><span class="line"><span class="comment">//匿名内部类</span></span><br><span class="line"> <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"多线程程序启动了"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;).start();</span><br><span class="line"><span class="comment">//Lambda表达式</span></span><br><span class="line">	  <span class="keyword">new</span> Thread(()-&gt;&#123;</span><br><span class="line">		  System.out.println(<span class="string">"多线程程序启动了"</span>);</span><br><span class="line">	  &#125;).start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="1-2-Lambda表达式的标准格式"><a href="#1-2-Lambda表达式的标准格式" class="headerlink" title="1.2 Lambda表达式的标准格式"></a>1.2 Lambda表达式的标准格式</h2><p>①Lambda表达式代码分析</p>
+<p>():里面没有内容，可以堪称方法形式参数为空</p>
+<p>-&gt;:用箭头指向后面要做的事情</p>
+<p>{}:代码块，可以看成是方法体中的内容</p>
+<p>格式：(形式参数)-&gt;{代码块}</p>
+<p>形式参数：如果有多个参数，参数之间用逗号隔开</p>
+<h2 id="1-3-Lambda的省略模式"><a href="#1-3-Lambda的省略模式" class="headerlink" title="1.3 Lambda的省略模式"></a>1.3 Lambda的省略模式</h2><p>参数类型可以省略，要省略就都省略，不能只省略一个</p>
+<p>如果参数只有个，那么小括号可以省略</p>
+<p>如果代码块语句只有一条，可以省略大括号和分号，如果是return，return也需要省略。</p>
+<h2 id="1-4-Lambda注意事项"><a href="#1-4-Lambda注意事项" class="headerlink" title="1.4 Lambda注意事项"></a>1.4 Lambda注意事项</h2><p>使用Lambda必须要有接口，并且要求接口中有且仅有一个抽象手法</p>
+<p>必须有上下文环境，才能推到出Lambda对应的接口</p>
+<h2 id="1-5-Lambda表达式和匿名内部类的区别"><a href="#1-5-Lambda表达式和匿名内部类的区别" class="headerlink" title="1.5 Lambda表达式和匿名内部类的区别"></a>1.5 Lambda表达式和匿名内部类的区别</h2><p>匿名内部类：可以是接口、抽象类、具体类，接口中大于一个抽象方法只能使用匿名内部类，编译生成一个单独的.class字节码文件</p>
+<p>Lambda：只能是接口，接口中只有一个抽象方法才能使用，没有单独字节码文件，对应的字节码运行时动态生成。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/17/Lambda/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-10-17T07:21:16.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网络编程入门</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">网络编程入门</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/" class="archive-article-date">
-  	<time datetime="2020-10-10T12:47:03.154Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/">SSM01(概述、注入)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -270,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
