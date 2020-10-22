@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Klesit</title>
+  <title>SSM03(AOP) | Klesit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个小博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Klesit">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="一、AOPAOP:（Aspect Oriented Programming）面向切面编程； 指在程序运行期间，将某段代码动态的切入到指定方法的指定位置进行运行的这种编程方式，面向切面编程。 场景：计算器运行计算方法的时候进行日志记录 1、常规方法：123456789public class ArithmeticCalculatorImpl implements ArithmeticCalculat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM03(AOP)">
+<meta property="og:url" content="http://yoursite.com/2020/10/20/SSM03(AOP)/index.html">
 <meta property="og:site_name" content="Klesit">
-<meta property="og:description" content="一个小博客">
+<meta property="og:description" content="一、AOPAOP:（Aspect Oriented Programming）面向切面编程； 指在程序运行期间，将某段代码动态的切入到指定方法的指定位置进行运行的这种编程方式，面向切面编程。 场景：计算器运行计算方法的时候进行日志记录 1、常规方法：123456789public class ArithmeticCalculatorImpl implements ArithmeticCalculat">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="f:%5C%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CSSM%5CAOP%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E4%B8%BE%E4%BE%8B.png">
+<meta property="article:published_time" content="2020-10-20T11:34:58.715Z">
+<meta property="article:modified_time" content="2020-10-22T13:48:30.953Z">
 <meta property="article:author" content="Kleistyzy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="f:%5C%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CSSM%5CAOP%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E4%B8%BE%E4%BE%8B.png">
   
     <link rel="alternative" href="/atom.xml" title="Klesit" type="application/atom+xml">
   
@@ -156,157 +160,219 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-SSM03(AOP)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      SSM03(AOP)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/SSM03(AOP)/" class="archive-article-date">
+
+        
+        <a href="/2020/10/20/SSM03(AOP)/" class="archive-article-date">
   	<time datetime="2020-10-20T11:34:58.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/SSM03(AOP)/">SSM03(AOP)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、AOP"><a href="#一、AOP" class="headerlink" title="一、AOP"></a>一、AOP</h2><p>AOP:（Aspect Oriented Programming）面向切面编程；</p>
+<p>指在程序运行期间，将某段代码动态的切入到指定方法的指定位置进行运行的这种编程方式，面向切面编程。</p>
+<p>场景：计算器运行计算方法的时候进行日志记录</p>
+<h3 id="1、常规方法："><a href="#1、常规方法：" class="headerlink" title="1、常规方法："></a>1、常规方法：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArithmeticCalculatorImpl</span> <span class="keyword">implements</span> <span class="title">ArithmeticCalculator</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"日志：执行的是add方法"</span>);</span><br><span class="line">        <span class="keyword">int</span> result=i+j;</span><br><span class="line">        <span class="keyword">return</span> result;	</span><br><span class="line">    &#125;</span><br><span class="line">    。。。。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="2、动态代理（Proxy）"><a href="#2、动态代理（Proxy）" class="headerlink" title="2、动态代理（Proxy）"></a>2、动态代理（Proxy）</h3><p>代理设计模式的原理：<strong>使用一个代理将对象包装起来</strong>，然后用该代理对象取代原始对象。任何对原始对象的调用都要通过代理。代理对象决定是否以及何时将方法调用转到原始对象上。</p>
+<p>代码：（摸了，下次一定，视频P62、63）</p>
+<p>1）、写起来太难</p>
+<p>2）、目标对象没有实现任何接口是无法为他创建代理对象的</p>
+<p>Spring实现了AOP功能：可以利用Spring直接创建动态代理</p>
+<h3 id="3、AOP专业术语"><a href="#3、AOP专业术语" class="headerlink" title="3、AOP专业术语"></a>3、AOP专业术语</h3><p> 横切关注点：</p>
+<p>切面（Aspect）：从每个方法中抽取出来的同一类非核心业务。</p>
+<p>通知（Advice）：封装横切关注点信息的类，每个关注点体现为一个通知方法。</p>
+<p>目标（Target）：切面必须要完成的各个具体工作</p>
+<p>代理（Proxy）：向目标对象应用通知之后创建的代理对象</p>
+<p>连接点（Joinpoint）：横切关注点在程序代码中的具体体现，对应程序执行的某个特定位置。例如：类某个方法调用前、调用后、方法捕获到异常后等。</p>
+<p>切入点（pointcut）：定位连接点的方式。每个类的方法中都包含多个连接点，所以连接点是类中客观存在的事物。如果把连接点看作数据库中的记录，那么切入点就是查询条件——AOP可以通过切入点定位到特定的连接点。切点通过org.springframework.aop.Pointcut 接口进行描述，它使用类和方法作为连接点的查询条件。</p>
+<p> 计算器举例：</p>
+<p><img src="F:%5C%E7%BD%91%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5CSSM%5CAOP%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E4%B8%BE%E4%BE%8B.png" alt="AOP专业术语举例"></p>
+<h3 id="4、-AOP使用步骤"><a href="#4、-AOP使用步骤" class="headerlink" title="4、 AOP使用步骤"></a>4、 AOP使用步骤</h3><p>1）、导包</p>
+<p>●aopalliance.jar</p>
+<p>●aspectj.weaver.jar</p>
+<p>●spring-aspects.jar</p>
+<p>2）、写配置</p>
+<p>●将目标类和切面类（封装了通知方法（在目标方法执行前后执行的方法））加入到AOP容器中</p>
+<p>●告诉Spring到底哪个是切面类 添加@Aspect</p>
+<p>●告诉Spring，切面类何时何地运行，在注解后面写切入点表达式</p>
+<p>切入点表达式：execution（访问权限符 返回值类型 方法签名）（*代表所有方法）</p>
+<p>[1]@Before：前置通知，在方法执行之前执行</p>
+<p>[2]@After：后置通知，在方法执行之后执行</p>
+<p>[3]@AfterRunning：返回通知，在方法返回结果之后执行</p>
+<p>[4]@AfterThrowing：异常通知，在方法抛出异常之后执行</p>
+<p>[5]@Around：环绕通知，围绕着方法执行</p>
+<p>●开启基于注解的AOP模式</p>
+<p><a href="aop:aspectj-autoproxy">aop:aspectj-autoproxy</a></p>
+<p>当Spring IOC容器侦测到bean配置文件中的<a href="aop:aspectj-autoproxy">aop:aspectj-autoproxy</a>元素时，会自动为与AspectJ切面匹配的bean创建代理</p>
+<p>3）、测试</p>
+<p>从ioc容器拿到目标对象，如果想用类型，一定要用他的接口类型</p>
+<h3 id="5、细节"><a href="#5、细节" class="headerlink" title="5、细节"></a>5、细节</h3><h4 id="1-没有接口，cglib会自动创建个代理"><a href="#1-没有接口，cglib会自动创建个代理" class="headerlink" title="1.没有接口，cglib会自动创建个代理"></a>1.没有接口，cglib会自动创建个代理</h4><h4 id="2-切入点表达式："><a href="#2-切入点表达式：" class="headerlink" title="2.切入点表达式："></a>2.切入点表达式：</h4><p>语法格式：execution([权限修饰符] [返回值类型] [简单类名/全类名] <a href="[参数列表]">方法名</a>)  </p>
+<p>通配符：</p>
+<p>*：匹配一个或者多个字符、匹配任意一个参数，只能匹配一层路径</p>
+<p>..：匹配任意数量、任意类型的参数  ，匹配任意多层路径</p>
+<h4 id="3-通知方法的执行顺序"><a href="#3-通知方法的执行顺序" class="headerlink" title="3.通知方法的执行顺序"></a>3.通知方法的执行顺序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    method.invoke(obj.args);</span><br><span class="line">    <span class="meta">@AfterReturning</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>()&#123;</span><br><span class="line">    <span class="meta">@AfterThrowing</span></span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    <span class="meta">@After</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>正常执行：@Before（前置通知）-&gt;@After-&gt;@AfterReturning</p>
+<p>异常执行：@Before（前置通知）-&gt;@After-&gt;@AfterThrowing</p>
+<h4 id="4-在通知方法运行的时候可以拿到目标方法的详细信息"><a href="#4-在通知方法运行的时候可以拿到目标方法的详细信息" class="headerlink" title="4.在通知方法运行的时候可以拿到目标方法的详细信息"></a>4.在通知方法运行的时候可以拿到目标方法的详细信息</h4><p>只要为通知方法的参数列表写个参数，JoinPoint（连接点）</p>
+<p>切入点表达式通常都会是从宏观上定位一组方法，和具体某个通知的注解结合起来就能够确定对应的连接点。那么就一个具体的连接点而言，我们可能会关心这个连接点的一些具体信息，例如：当前连接点所在方法的方法名、当前传入的参数值等等。这些信息都封装在JoinPoint接口的实例对象中。</p>
+<p>getSignature（）：封装签名信息的对象，可以进一步获取方法名（getName（））</p>
+<h4 id="5-returning和throwing"><a href="#5-returning和throwing" class="headerlink" title="5.returning和throwing"></a>5.returning和throwing</h4><p>returning=”result”告诉spring哪个参数接受结果， throwing=””告诉spring哪个参数接受异常。</p>
+<h4 id="6-抽取可重用的切入点表达式"><a href="#6-抽取可重用的切入点表达式" class="headerlink" title="6.抽取可重用的切入点表达式"></a>6.抽取可重用的切入点表达式</h4><p>随便声明个没有实现的返回void方法，加上@Pointcut（切入点表达式）注解</p>
+<h4 id="7-环绕通知-Around"><a href="#7-环绕通知-Around" class="headerlink" title="7.环绕通知@Around"></a>7.环绕通知@Around</h4><p>spring中最强大的通知</p>
+<p>环绕通知中有一个参数ProceedingJoinPoint（）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myAround</span><span class="params">(ProceedingJoinPoint pjp)</span> <span class="keyword">throws</span> Throwable</span>&#123;</span><br><span class="line">    Object[] args=pjp.getArgs();</span><br><span class="line">    <span class="comment">//就是利用反射调用目标方法即可，就是method.invoke(obj,args)</span></span><br><span class="line">    Object procedd=<span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="comment">//@Before</span></span><br><span class="line">        System.out.println(<span class="string">""</span>);</span><br><span class="line">        proceed=pjp.proceed(args);</span><br><span class="line">        <span class="comment">//@AfterReturning</span></span><br><span class="line">        System.out.println(<span class="string">""</span>);</span><br><span class="line">    &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">        <span class="comment">//@AfterThrowing</span></span><br><span class="line">       System.out.println(<span class="string">""</span>);</span><br><span class="line">    &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">        <span class="comment">//@After</span></span><br><span class="line">        System.out.println(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> proceed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/paly__bear/article/details/78582654?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160337099619724842922950%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=160337099619724842922950&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-78582654.pc_first_rank_v2_rank_v28&amp;utm_term=%E7%8E%AF%E7%BB%95%E9%80%9A%E7%9F%A5&amp;spm=1018.2118.3001.4187" target="_blank" rel="noopener">https://blog.csdn.net/paly__bear/article/details/78582654?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160337099619724842922950%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=160337099619724842922950&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-78582654.pc_first_rank_v2_rank_v28&amp;utm_term=%E7%8E%AF%E7%BB%95%E9%80%9A%E7%9F%A5&amp;spm=1018.2118.3001.4187</a></p>
+<p>环绕通知优于普通通知的执行。</p>
+<h3 id="6、AOP使用场景"><a href="#6、AOP使用场景" class="headerlink" title="6、AOP使用场景"></a>6、AOP使用场景</h3><p>1）、AOP加日志保存到数据库；</p>
+<p>2）、AOP做权限验证；</p>
+<p>3）、AOP做安全检查；</p>
+<p>4）、AOP做事务控制；</p>
+<h3 id="7、AOP-XML"><a href="#7、AOP-XML" class="headerlink" title="7、AOP-XML"></a>7、AOP-XML</h3><h4 id="基于注解的AOP步骤："><a href="#基于注解的AOP步骤：" class="headerlink" title="基于注解的AOP步骤："></a>基于注解的AOP步骤：</h4><h5 id="1-将目标类和切面类加入到容器中"><a href="#1-将目标类和切面类加入到容器中" class="headerlink" title="1.将目标类和切面类加入到容器中"></a>1.将目标类和切面类加入到容器中</h5><h5 id="2-告诉spring哪个是切面类"><a href="#2-告诉spring哪个是切面类" class="headerlink" title="2.告诉spring哪个是切面类"></a>2.告诉spring哪个是切面类</h5><h5 id="3-在切面类使用通知注解来配置切面中的通知方法"><a href="#3-在切面类使用通知注解来配置切面中的通知方法" class="headerlink" title="3.在切面类使用通知注解来配置切面中的通知方法"></a>3.在切面类使用通知注解来配置切面中的通知方法</h5><h4 id="基于配置的AOP"><a href="#基于配置的AOP" class="headerlink" title="基于配置的AOP"></a>基于配置的AOP</h4><h4 id="1-AOP名称空间-lt-aop-config-gt-lt-aop-aspect-gt"><a href="#1-AOP名称空间-lt-aop-config-gt-lt-aop-aspect-gt" class="headerlink" title="1.AOP名称空间 &lt;aop:config &gt;   &lt;aop:aspect&gt;"></a>1.AOP名称空间 &lt;<a href="aop:config">aop:config</a> &gt;   &lt;<a href="aop:aspec">aop:aspec</a>t&gt;</h4><p>&lt;<a href="aop:before">aop:before</a> ,method=”XXX” pointcut=”execution”&gt; </p>
+<p>&lt;&lt;aop:after ,method=”XXX” pointcut=”execution”&gt; </p>
+<p>…</p>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/20/SSM03(AOP)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/Lambda/" class="archive-article-date">
-  	<time datetime="2020-10-17T13:20:03.981Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/17/Lambda/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Lambda</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/Lambda/">Lambda</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-10-17T07:21:16.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">网络编程入门</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/13/SSM02(IOC)/" class="archive-article-date">
-  	<time datetime="2020-10-13T07:48:54.500Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/SSM02(IOC)/">SSM02(IOC)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/" class="archive-article-date">
-  	<time datetime="2020-10-10T12:47:03.154Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/">SSM01(概述、注入)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -329,8 +395,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
