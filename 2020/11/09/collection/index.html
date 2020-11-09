@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Klesit</title>
+  <title>collection | Klesit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个小博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Klesit">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="集合（collection）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="collection">
+<meta property="og:url" content="http://yoursite.com/2020/11/09/collection/index.html">
 <meta property="og:site_name" content="Klesit">
-<meta property="og:description" content="一个小博客">
+<meta property="og:description" content="集合（collection）">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:%5CUsers%5C%E8%A2%81%E7%AB%B9%E9%9B%A8%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1600606354690.png">
+<meta property="article:published_time" content="2020-11-09T13:00:03.377Z">
+<meta property="article:modified_time" content="2020-11-09T12:59:59.108Z">
 <meta property="article:author" content="Kleistyzy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5C%E8%A2%81%E7%AB%B9%E9%9B%A8%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1600606354690.png">
   
     <link rel="alternative" href="/atom.xml" title="Klesit" type="application/atom+xml">
   
@@ -156,292 +160,195 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-collection" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      collection
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/collection/" class="archive-article-date">
+
+        
+        <a href="/2020/11/09/collection/" class="archive-article-date">
   	<time datetime="2020-11-09T13:00:03.377Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/collection/">collection</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="集合（collection）"><a href="#集合（collection）" class="headerlink" title="集合（collection）"></a>集合（collection）</h3><a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>1.创建collection集合的对象采用多态的形式。</p>
+<p>2.add：添加元素       remove：移除指定元素          clear：清空元素</p>
+<p>contains：判断是否存在指定元素    isEmpty：判断是否为空</p>
+<p>size：集合长度</p>
+<p>3.collection集合的遍历</p>
+<p>Iterator：迭代器，集合专用遍历方式</p>
+<p>next（）：返回迭代中的元素</p>
+<p>hasNext（）：</p>
+<h3 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h3><p>有序集合，通常允许重复的元素。</p>
+<p>方法跟ArrayList一致。</p>
+<h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>for（元素类型 i：数组名）{</p>
+<p>}</p>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>1.栈和队列</p>
+<p>2.链表和数组</p>
+<h3 id="List集合子类特点"><a href="#List集合子类特点" class="headerlink" title="List集合子类特点"></a>List集合子类特点</h3><p>ArrayList：底层数据结构是数组，查快，增删慢</p>
+<p>LinkedList：底层数据结构是链表，查慢，增删快</p>
+<h3 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h3><p>1.特点：</p>
+<p>不包含重复元素的集合，没有带索引的方法，所以不能使用普通for循环遍历。</p>
+<p>HashSet：对集合的迭代顺序不做任何保证</p>
+<p>2.哈希值：是JDK根据对象的地址或者字符串或者数字算出来的int类型的数值<br>Object类中有一个方法可以获取对象的哈希值<br>●   public int hashCode():返回对象的哈希码值</p>
+<p>3.HashSet集合特点</p>
+<p>底层结构是哈希表</p>
+<p>对集合的迭代顺序不做任何保证</p>
+<p>不包含重复元素的集合，没有带索引的方法，所以不能使用普通for循环遍历。</p>
+<p>遍历避免相同元素要重写hashCode（）和equals（）方法</p>
+<p>4.数据结构之哈希表</p>
+<p>5.LinkedHashSet集合特点</p>
+<p>哈希表和链表实现的Set接口，元素存储和取出顺序是一致的。</p>
+<p>哈希表保证元素唯一，没有重复元素。</p>
+<p>6.TreeSet集合特点</p>
+<p>元素有序：指的是按照一定的规则进行排序，具体排序方式取决于构造方法。</p>
+<p>TreeSet（）：根据其元素的自然排序进行排序。</p>
+<p>TreeSet（Comparator comparator）：根据指定的比较器进行排序。</p>
+<p>不包含重复元素，不带索引方法。</p>
+<p>用的是包装类类型。</p>
+<p>7.Comparable（）方法，视频P247！！！</p>
+<p>8.<img src="C:%5CUsers%5C%E8%A2%81%E7%AB%B9%E9%9B%A8%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1600606354690.png" alt="1600606354690"></p>
+<p>9.比较器Comparator的使用 P248！！！</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/09/collection/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.073Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSM07(ssm整合)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/">SSM07(ssm整合)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM06(MyBatis)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.043Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM06(MyBatis)/">SSM06(MyBatis)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM05(SpringMvc)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.042Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM05(SpringMvc)/">SSM05(SpringMvc)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM04(JDBCTempate)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.041Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM04(JDBCTempate)/">SSM04(JDBCTempate)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/SSM03(AOP)/" class="archive-article-date">
-  	<time datetime="2020-10-20T11:34:58.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/SSM03(AOP)/">SSM03(AOP)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/Lambda/" class="archive-article-date">
-  	<time datetime="2020-10-17T13:20:03.981Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/Lambda/">Lambda</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-10-17T07:21:16.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">网络编程入门</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/13/SSM02(IOC)/" class="archive-article-date">
-  	<time datetime="2020-10-13T07:48:54.500Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/SSM02(IOC)/">SSM02(IOC)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/" class="archive-article-date">
-  	<time datetime="2020-10-10T12:47:03.154Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/">SSM01(概述、注入)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -464,8 +371,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

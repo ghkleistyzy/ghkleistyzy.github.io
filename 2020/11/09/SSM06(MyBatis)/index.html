@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Klesit</title>
+  <title>SSM06(MyBatis) | Klesit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个小博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Klesit">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="MyBatis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM06(MyBatis)">
+<meta property="og:url" content="http://yoursite.com/2020/11/09/SSM06(MyBatis)/index.html">
 <meta property="og:site_name" content="Klesit">
-<meta property="og:description" content="一个小博客">
+<meta property="og:description" content="MyBatis">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-09T12:58:53.043Z">
+<meta property="article:modified_time" content="2020-11-08T07:00:00.474Z">
 <meta property="article:author" content="Kleistyzy">
 <meta name="twitter:card" content="summary">
   
@@ -156,292 +158,226 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SSM06(MyBatis)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/collection/" class="archive-article-date">
-  	<time datetime="2020-11-09T13:00:03.377Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/collection/">collection</a>
+    <h1 class="article-title" itemprop="name">
+      SSM06(MyBatis)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.073Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/">SSM07(ssm整合)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM06(MyBatis)/" class="archive-article-date">
+        
+        <a href="/2020/11/09/SSM06(MyBatis)/" class="archive-article-date">
   	<time datetime="2020-11-09T12:58:53.043Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM06(MyBatis)/">SSM06(MyBatis)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="一、初步实现CRUD"><a href="#一、初步实现CRUD" class="headerlink" title="一、初步实现CRUD"></a>一、初步实现CRUD</h3><p>代码在MyEclipse的1.MyBatis中</p>
+<h3 id="二、全局配置文件"><a href="#二、全局配置文件" class="headerlink" title="二、全局配置文件"></a>二、全局配置文件</h3><p><a href="https://mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">https://mybatis.org/mybatis-3/zh/configuration.html</a></p>
+<p>configuration（配置）：</p>
+<ul>
+<li><a href="https://mybatis.org/mybatis-3/zh/configuration.html#properties" target="_blank" rel="noopener">properties（属性）</a></li>
+<li><a href="https://mybatis.org/mybatis-3/zh/configuration.html#settings" target="_blank" rel="noopener">settings（设置）</a></li>
+<li><a href="https://mybatis.org/mybatis-3/zh/configuration.html#typeAliases" target="_blank" rel="noopener">typeAliases（类型别名）</a></li>
+<li><a href="https://mybatis.org/mybatis-3/zh/configuration.html#typeHandlers" target="_blank" rel="noopener">typeHandlers（类型处理器）</a></li>
+<li><a href="https://mybatis.org/mybatis-3/zh/configuration.html#objectFactory" target="_blank" rel="noopener">objectFactory（对象工厂）</a></li>
+<li><a href="https://mybatis.org/mybatis-3/zh/configuration.html#plugins" target="_blank" rel="noopener">plugins（插件）</a></li>
+<li>environments（环境配置）<ul>
+<li>environment（环境变量）<ul>
+<li>transactionManager（事务管理器）</li>
+<li>dataSource（数据源）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://mybatis.org/mybatis-3/zh/configuration.html#databaseIdProvider" target="_blank" rel="noopener">databaseIdProvider（数据库厂商标识）</a></li>
+<li>[mappers（映射器）]</li>
+</ul>
+<h4 id="2-1-属性（properties）"><a href="#2-1-属性（properties）" class="headerlink" title="2.1.属性（properties）"></a>2.1.属性（properties）</h4><p>引入外部文件</p>
+<p>resource：引入类路径</p>
+<p>url：引入磁盘路径</p>
+<h4 id="2-2-settings"><a href="#2-2-settings" class="headerlink" title="2.2.settings"></a>2.2.settings</h4><p>很重要</p>
+<p>举例： mapUnderscoreToCamelCase </p>
+<h4 id="2-3-typeAliases（类型别名）"><a href="#2-3-typeAliases（类型别名）" class="headerlink" title="2.3. typeAliases（类型别名）"></a>2.3. typeAliases（类型别名）</h4><h4 id="2-4-typeHandlers（类型处理器）"><a href="#2-4-typeHandlers（类型处理器）" class="headerlink" title="2.4.typeHandlers（类型处理器）"></a>2.4.typeHandlers（类型处理器）</h4><p> MyBatis 在设置预处理语句（PreparedStatement）中的参数或从结果集中取出一个值时， 都会用类型处理器将获取到的值以合适的方式转换成 Java 类型。下表描述了一些默认的类型处理器。 </p>
+<h4 id="2-5-对象工厂（objectFactory）"><a href="#2-5-对象工厂（objectFactory）" class="headerlink" title="2.5.对象工厂（objectFactory）"></a>2.5.对象工厂（objectFactory）</h4><h4 id="2-6-插件（plugins）"><a href="#2-6-插件（plugins）" class="headerlink" title="2.6.插件（plugins）"></a>2.6.插件（plugins）</h4><p>MyBatis 允许你在映射语句执行过程中的某一点进行拦截调用。默认情况下，MyBatis 允许使用插件来拦截的方法调用包括：</p>
+<ul>
+<li>Executor (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)</li>
+<li>ParameterHandler (getParameterObject, setParameters)</li>
+<li>ResultSetHandler (handleResultSets, handleOutputParameters)</li>
+<li>StatementHandler (prepare, parameterize, batch, update, query)</li>
+</ul>
+<h4 id="2-7-环境配置（environments）"><a href="#2-7-环境配置（environments）" class="headerlink" title="2.7.环境配置（environments）"></a>2.7.环境配置（environments）</h4><h4 id="2-8-数据库厂商标识（databaseIdProvider）"><a href="#2-8-数据库厂商标识（databaseIdProvider）" class="headerlink" title="2.8.数据库厂商标识（databaseIdProvider）"></a>2.8.数据库厂商标识（databaseIdProvider）</h4><h4 id="2-9-映射器（mappers）"><a href="#2-9-映射器（mappers）" class="headerlink" title="2.9.映射器（mappers）"></a>2.9.映射器（mappers）</h4><p> 我们需要告诉 MyBatis 到哪里去找到这些语句。 在自动查找资源方面，Java 并没有提供一个很好的解决方案，所以最好的办法是直接告诉 MyBatis 到哪里去找映射文件。 你可以使用相对于类路径的资源引用，或完全限定资源定位符（包括 <code>file:///</code> 形式的 URL），或类名和包名等 </p>
+<p>resource：引入类路径</p>
+<p>url：引入磁盘路径</p>
+<p>class：直接引用接口的全类名</p>
+<h3 id="三、SQL映射文件"><a href="#三、SQL映射文件" class="headerlink" title="三、SQL映射文件"></a>三、SQL映射文件</h3><h4 id="3-1-获取自增主键的值"><a href="#3-1-获取自增主键的值" class="headerlink" title="3.1.获取自增主键的值"></a>3.1.获取自增主键的值</h4><p>useGeneratedKeys=”true“</p>
+<p>keyProperty=”id“(把自增主键赋值给id)</p>
+<h4 id="3-2-获取非自增主键的值"><a href="#3-2-获取非自增主键的值" class="headerlink" title="3.2.获取非自增主键的值"></a>3.2.获取非自增主键的值</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;selectkey order=<span class="string">"before"</span> resultType=<span class="string">"integer"</span> keyProperty=<span class="string">"id"</span>&gt;</span><br><span class="line">    输入sql语句</span><br><span class="line">&lt;/selsectkey&gt;</span><br></pre></td></tr></table></figure>
 
+<h4 id="3-3-传入多个参数自动封装成Map"><a href="#3-3-传入多个参数自动封装成Map" class="headerlink" title="3.3.传入多个参数自动封装成Map"></a>3.3.传入多个参数自动封装成Map</h4><p>在dao接口加入@Param（”“，”“）</p>
+<h4 id="3-5-联合查询"><a href="#3-5-联合查询" class="headerlink" title="3.5.联合查询"></a>3.5.联合查询</h4><p>暂时未看</p>
+<h4 id="3-6-动态SQL"><a href="#3-6-动态SQL" class="headerlink" title="3.6. 动态SQL"></a>3.6. 动态SQL</h4><p>•动态 SQL是MyBatis强大特性之一。极大的简化我们拼装SQL的操作。</p>
+<p>•动态 SQL 元素和使用 JSTL 或其他类似基于 XML 的文本处理器相似。</p>
+<p>•MyBatis 采用功能强大的基于 OGNL 的表达式来简化操作。</p>
+<p>符号得用html5规范的</p>
+<p>–if</p>
+<p>–choose (when, otherwise)</p>
+<p>–trim (where, set)</p>
+<p>–foreach</p>
+<h5 id="3-6-1-if"><a href="#3-6-1-if" class="headerlink" title="3.6.1.if"></a>3.6.1.if</h5><p>test=””：编写判断条件</p>
+<h5 id="3-6-2-where"><a href="#3-6-2-where" class="headerlink" title="3.6.2.where"></a>3.6.2.where</h5><p>xxxx and（如果不和条件会自动去除and）</p>
+<h5 id="3-6-3-foreach"><a href="#3-6-3-foreach" class="headerlink" title="3.6.3.foreach"></a>3.6.3.foreach</h5><h6 id="collection-”“：指定要遍历集合的key"><a href="#collection-”“：指定要遍历集合的key" class="headerlink" title="collection=”“：指定要遍历集合的key"></a>collection=”“：指定要遍历集合的key</h6><h6 id="item-”“：每次遍历出的元素起一个变量名"><a href="#item-”“：每次遍历出的元素起一个变量名" class="headerlink" title="item=”“：每次遍历出的元素起一个变量名"></a>item=”“：每次遍历出的元素起一个变量名</h6><h6 id="close-：每次遍历元素在结束加入的"><a href="#close-：每次遍历元素在结束加入的" class="headerlink" title="close=：每次遍历元素在结束加入的"></a>close=：每次遍历元素在结束加入的</h6><h6 id="index-："><a href="#index-：" class="headerlink" title="index=："></a>index=：</h6><p>•当迭代列表、集合等可迭代对象或者数组时</p>
+<p>–index是当前迭代的次数，item的值是本次迭代获取的元素</p>
+<p>•当使用字典（或者Map.Entry对象的集合）时</p>
+<p>–index是键，item是值</p>
+<h6 id="opne-：每次遍历元素在开始加入的"><a href="#opne-：每次遍历元素在开始加入的" class="headerlink" title="opne=：每次遍历元素在开始加入的"></a>opne=：每次遍历元素在开始加入的</h6><h6 id="separator-：每次遍历元素的分隔符"><a href="#separator-：每次遍历元素的分隔符" class="headerlink" title="separator=：每次遍历元素的分隔符"></a>separator=：每次遍历元素的分隔符</h6><h5 id="3-6-4-choose"><a href="#3-6-4-choose" class="headerlink" title="3.6.4.choose"></a>3.6.4.choose</h5><h5 id="3-6-5-set"><a href="#3-6-5-set" class="headerlink" title="3.6.5.set"></a>3.6.5.set</h5><p>用于upadte</p>
+<h4 id="3-7-缓存"><a href="#3-7-缓存" class="headerlink" title="3.7.缓存"></a>3.7.缓存</h4><p><strong>暂时未看！！！（下次一定）</strong></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/09/SSM06(MyBatis)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM05(SpringMvc)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.042Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SSM07(ssm整合)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/09/SSM05(SpringMvc)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSM05(SpringMvc)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM05(SpringMvc)/">SSM05(SpringMvc)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM04(JDBCTempate)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.041Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM04(JDBCTempate)/">SSM04(JDBCTempate)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/SSM03(AOP)/" class="archive-article-date">
-  	<time datetime="2020-10-20T11:34:58.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/SSM03(AOP)/">SSM03(AOP)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/Lambda/" class="archive-article-date">
-  	<time datetime="2020-10-17T13:20:03.981Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/Lambda/">Lambda</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-10-17T07:21:16.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">网络编程入门</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/13/SSM02(IOC)/" class="archive-article-date">
-  	<time datetime="2020-10-13T07:48:54.500Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/SSM02(IOC)/">SSM02(IOC)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/" class="archive-article-date">
-  	<time datetime="2020-10-10T12:47:03.154Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/">SSM01(概述、注入)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -464,8 +400,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

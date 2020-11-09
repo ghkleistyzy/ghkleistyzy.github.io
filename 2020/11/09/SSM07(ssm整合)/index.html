@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Klesit</title>
+  <title>SSM07(ssm整合) | Klesit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个小博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Klesit">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="SSM整合Spring+SpringMVC+MyBatis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSM07(ssm整合)">
+<meta property="og:url" content="http://yoursite.com/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/index.html">
 <meta property="og:site_name" content="Klesit">
-<meta property="og:description" content="一个小博客">
+<meta property="og:description" content="SSM整合Spring+SpringMVC+MyBatis">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-09T12:58:53.073Z">
+<meta property="article:modified_time" content="2020-11-09T12:58:09.398Z">
 <meta property="article:author" content="Kleistyzy">
 <meta name="twitter:card" content="summary">
   
@@ -156,292 +158,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SSM07(ssm整合)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/collection/" class="archive-article-date">
-  	<time datetime="2020-11-09T13:00:03.377Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/collection/">collection</a>
+    <h1 class="article-title" itemprop="name">
+      SSM07(ssm整合)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/" class="archive-article-date">
+        
+        <a href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/" class="archive-article-date">
   	<time datetime="2020-11-09T12:58:53.073Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/">SSM07(ssm整合)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SSM整合"><a href="#SSM整合" class="headerlink" title="SSM整合"></a>SSM整合</h2><p>Spring+SpringMVC+MyBatis</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="一、导包"><a href="#一、导包" class="headerlink" title="一、导包"></a>一、导包</h3><h4 id="1）Spring："><a href="#1）Spring：" class="headerlink" title="1）Spring："></a>1）Spring：</h4><h4 id="2）SpringMVC："><a href="#2）SpringMVC：" class="headerlink" title="2）SpringMVC："></a>2）SpringMVC：</h4><h4 id="3）MyBatis："><a href="#3）MyBatis：" class="headerlink" title="3）MyBatis："></a>3）MyBatis：</h4><h3 id="二、写配置"><a href="#二、写配置" class="headerlink" title="二、写配置"></a>二、写配置</h3><h4 id="0）web-xml：配置spring和springmvc"><a href="#0）web-xml：配置spring和springmvc" class="headerlink" title="0）web.xml：配置spring和springmvc"></a>0）web.xml：配置spring和springmvc</h4><h4 id="1）Spring：-1"><a href="#1）Spring：-1" class="headerlink" title="1）Spring："></a>1）Spring：</h4><p>包扫描，不扫描controller，扫描dao，service</p>
+<p>①配数据源</p>
+<p>②配置使用MyBatis数据库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span><br><span class="line">    &lt;prpoerty name=<span class="string">"configLocation"</span> value=<span class="string">""</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"datasource"</span> ref=<span class="string">""</span>&gt;</span><br><span class="line">    </span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
 
+<p>③配置事务控制，配置事务管理器控制住数据源</p>
+<p>④基于xml配置，配置事务哪些方法切入事务，还要写切入点表达式</p>
+<p>配置切入点表达式</p>
+<p>⑤配置事务增强、事务属性、事务建议</p>
+<p>&lt;<a href="tx:advice">tx:advice</a>&gt;</p>
+<h4 id="2）SpringMVC：-1"><a href="#2）SpringMVC：-1" class="headerlink" title="2）SpringMVC："></a>2）SpringMVC：</h4><p>包扫描，只扫描controller</p>
+<h4 id="3）MyBatis：-1"><a href="#3）MyBatis：-1" class="headerlink" title="3）MyBatis："></a>3）MyBatis：</h4><h4 id="4-整合步骤："><a href="#4-整合步骤：" class="headerlink" title="4)   整合步骤："></a>4)   整合步骤：</h4><p>导入整合包；</p>
+<h3 id="三、简单案例代码"><a href="#三、简单案例代码" class="headerlink" title="三、简单案例代码"></a>三、简单案例代码</h3><h4 id="1、先配置web-xml"><a href="#1、先配置web-xml" class="headerlink" title="1、先配置web.xml"></a>1、先配置web.xml</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;web-app version=<span class="string">"2.5"</span> xmlns=<span class="string">"http://java.sun.com/xml/ns/javaee"</span></span><br><span class="line">         xmlns:xis=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">         xis:schemaLocation=<span class="string">"http://java.sun.com/xml/ns/javaee</span></span><br><span class="line"><span class="string">         http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span>&gt;</span><br><span class="line">    &lt;display-name&gt;client&lt;/display-name&gt;</span><br><span class="line">    &lt;!--配置Spring容器启动  --&gt;</span><br><span class="line">    &lt;context-param&gt;</span><br><span class="line">        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">        &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;</span><br><span class="line">    &lt;/context-param&gt;</span><br><span class="line">    &lt;listener&gt;</span><br><span class="line">        &lt;listener-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">context</span>.<span class="title">ContextLoaderListener</span>&lt;/<span class="title">listener</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">listener</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;!--2.配置<span class="title">SpringMVC</span> --&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">DispatcherServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">servlet</span>-<span class="title">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">servlet</span>.<span class="title">DispatcherServlet</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">contextConfigLocation</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line">            &lt;param-value&gt;classpath:applicationContext-mvc.xml&lt;/param-value&gt;</span><br><span class="line">        &lt;/init-param&gt;</span><br><span class="line">    &lt;/servlet&gt;</span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;/&lt;/url-pattern&gt;</span><br><span class="line">    &lt;/servlet-mapping&gt;</span><br><span class="line">    &lt;filter&gt;</span><br><span class="line">        &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;</span><br><span class="line">        &lt;filter-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">filter</span>.<span class="title">CharacterEncodingFilter</span>&lt;/<span class="title">filter</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">encoding</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">param</span>-<span class="title">value</span>&gt;<span class="title">utf</span>-8&lt;/<span class="title">param</span>-<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;/<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">forceEncoding</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">param</span>-<span class="title">value</span>&gt;<span class="title">true</span>&lt;/<span class="title">param</span>-<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;/<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    &lt;<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">filter</span>-<span class="title">name</span>&gt;<span class="title">CharacterEncodingFilter</span>&lt;/<span class="title">filter</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/*&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;!-- 支持<span class="title">Rest</span>风格的过滤器 --&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">filter</span>-<span class="title">name</span>&gt;<span class="title">HiddenHttpMethodFilter</span>&lt;/<span class="title">filter</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">filter</span>-<span class="title">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">filter</span>.<span class="title">HiddenHttpMethodFilter</span>&lt;/<span class="title">filter</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">filter</span>-<span class="title">name</span>&gt;<span class="title">HiddenHttpMethodFilter</span>&lt;/<span class="title">filter</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/*&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    &lt;<span class="title">welcome</span>-<span class="title">file</span>-<span class="title">list</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">welcome</span>-<span class="title">file</span>&gt;<span class="title">index</span>.<span class="title">jsp</span>&lt;/<span class="title">welcome</span>-<span class="title">file</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">welcome</span>-<span class="title">file</span>-<span class="title">list</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">web</span>-<span class="title">app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-配置pom-xml"><a href="#2-配置pom-xml" class="headerlink" title="2.配置pom.xml"></a>2.配置pom.xml</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line"></span><br><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">  xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span><br><span class="line">  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">  &lt;groupId&gt;org.example&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;1.SSMtest01&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">  &lt;packaging&gt;war&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">  &lt;name&gt;1.SSMtest01 Maven Webapp&lt;/name&gt;</span><br><span class="line">  &lt;!-- FIXME change it to the project<span class="string">'s website --&gt;</span></span><br><span class="line"><span class="string">  &lt;url&gt;http://www.example.com&lt;/url&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &lt;properties&gt;</span></span><br><span class="line"><span class="string">    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span></span><br><span class="line"><span class="string">    &lt;maven.compiler.source&gt;1.7&lt;/maven.compiler.source&gt;</span></span><br><span class="line"><span class="string">    &lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;</span></span><br><span class="line"><span class="string">    &lt;spring.version&gt;5.2.8.RELEASE&lt;/spring.version&gt;</span></span><br><span class="line"><span class="string">  &lt;/properties&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &lt;dependencies&gt;</span></span><br><span class="line"><span class="string">    &lt;dependency&gt;</span></span><br><span class="line"><span class="string">      &lt;groupId&gt;junit&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">      &lt;artifactId&gt;junit&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">      &lt;version&gt;4.11&lt;/version&gt;</span></span><br><span class="line"><span class="string">      &lt;scope&gt;test&lt;/scope&gt;</span></span><br><span class="line"><span class="string">    &lt;/dependency&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &lt;!--spring--&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-core&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-aspects&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-expression&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-orm&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-web&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;$&#123;spring.version&#125;&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;!-- 数据库 --&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;mysql&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;5.1.31&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;com.mchange&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;c3p0&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;0.9.5.2&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;!--mybatis--&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;3.4.6&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;1.3.2&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;!-- 通用包--&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;commons-logging&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;1.2&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;!-- 其他 --&gt;</span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;4.0.1&lt;/version&gt;</span></span><br><span class="line"><span class="string">    &lt;scope&gt;provided&lt;/scope&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &lt;dependency&gt;</span></span><br><span class="line"><span class="string">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span></span><br><span class="line"><span class="string">    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">    &lt;version&gt;1.2.47&lt;/version&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependency&gt;</span></span><br><span class="line"><span class="string">  &lt;/dependencies&gt;</span></span><br><span class="line"><span class="string">  &lt;build&gt;</span></span><br><span class="line"><span class="string">    &lt;finalName&gt;1.SSMtest01&lt;/finalName&gt;</span></span><br><span class="line"><span class="string">    &lt;pluginManagement&gt;&lt;!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) --&gt;</span></span><br><span class="line"><span class="string">      &lt;plugins&gt;</span></span><br><span class="line"><span class="string">        &lt;plugin&gt;</span></span><br><span class="line"><span class="string">          &lt;artifactId&gt;maven-clean-plugin&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">          &lt;version&gt;3.1.0&lt;/version&gt;</span></span><br><span class="line"><span class="string">        &lt;/plugin&gt;</span></span><br><span class="line"><span class="string">        &lt;!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging --&gt;</span></span><br><span class="line"><span class="string">        &lt;plugin&gt;</span></span><br><span class="line"><span class="string">          &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">          &lt;version&gt;3.0.2&lt;/version&gt;</span></span><br><span class="line"><span class="string">        &lt;/plugin&gt;</span></span><br><span class="line"><span class="string">        &lt;plugin&gt;</span></span><br><span class="line"><span class="string">          &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">          &lt;version&gt;3.8.0&lt;/version&gt;</span></span><br><span class="line"><span class="string">        &lt;/plugin&gt;</span></span><br><span class="line"><span class="string">        &lt;plugin&gt;</span></span><br><span class="line"><span class="string">          &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">          &lt;version&gt;2.22.1&lt;/version&gt;</span></span><br><span class="line"><span class="string">        &lt;/plugin&gt;</span></span><br><span class="line"><span class="string">        &lt;plugin&gt;</span></span><br><span class="line"><span class="string">          &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">          &lt;version&gt;3.2.2&lt;/version&gt;</span></span><br><span class="line"><span class="string">        &lt;/plugin&gt;</span></span><br><span class="line"><span class="string">        &lt;plugin&gt;</span></span><br><span class="line"><span class="string">          &lt;artifactId&gt;maven-install-plugin&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">          &lt;version&gt;2.5.2&lt;/version&gt;</span></span><br><span class="line"><span class="string">        &lt;/plugin&gt;</span></span><br><span class="line"><span class="string">        &lt;plugin&gt;</span></span><br><span class="line"><span class="string">          &lt;artifactId&gt;maven-deploy-plugin&lt;/artifactId&gt;</span></span><br><span class="line"><span class="string">          &lt;version&gt;2.8.2&lt;/version&gt;</span></span><br><span class="line"><span class="string">        &lt;/plugin&gt;</span></span><br><span class="line"><span class="string">      &lt;/plugins&gt;</span></span><br><span class="line"><span class="string">    &lt;/pluginManagement&gt;</span></span><br><span class="line"><span class="string">  &lt;/build&gt;</span></span><br><span class="line"><span class="string">&lt;/project&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-配置applicationContext-xml（spring）"><a href="#3-配置applicationContext-xml（spring）" class="headerlink" title="3.配置applicationContext.xml（spring）"></a>3.配置applicationContext.xml（spring）</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">       xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span> xmlns:tx=<span class="string">"http://www.springframework.org/schema/tx"</span></span><br><span class="line">       xmlns:aop=<span class="string">"http://www.springframework.org/schema/aop"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd"</span>&gt;</span><br><span class="line">    &lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.atguigu"</span>&gt;</span><br><span class="line">        &lt;context:exclude-filter type=<span class="string">"annotation"</span> expression=<span class="string">"org.springframework.stereotype.Controller"</span>/&gt;</span><br><span class="line">    &lt;/context:component-scan&gt;</span><br><span class="line">    &lt;!--<span class="number">1</span>.配置数据源--&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"ds"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.mchange.v2.c3p0.ComboPooledDataSource"</span>&gt;</span><br><span class="line">        &lt;property name="user" value="root"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="password" value="123456"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="jdbcUrl" value="jdbc:mysql://localhost:3306/mybatis_test"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="driverClass" value="com.mysql.jdbc.Driver"&gt;&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!--<span class="number">2</span>.配置MyBatis--&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"sqlSessionFactoryBean"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span><br><span class="line">        &lt;property name="configLocation" value="classpath:mybatis.mapper/mybatis-config.xml"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="dataSource" ref="ds"&gt;&lt;/property&gt;</span><br><span class="line">&lt;!-- sql映射文件的位置--&gt;</span><br><span class="line">        &lt;property name="mapperLocations" value="classpath:mybatis/EmployeeDao.xml"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.mybatis.spring.mapper.MapperScannerConfigurer"</span>&gt;</span><br><span class="line">        &lt;property name="basePackage" value="com.atguigu.dao"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!--<span class="number">3</span>.配置事务控制--&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"tm"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span>&gt;</span><br><span class="line">        &lt;property name="dataSource" ref="ds"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">    &lt;!--<span class="number">4</span>.基于xml配置事务--&gt;</span><br><span class="line">    &lt;aop:config&gt;</span><br><span class="line">        &lt;aop:pointcut id=<span class="string">"txPoint"</span> expression=<span class="string">"execution(* com.atguigu.service.*.*(..))"</span>/&gt;</span><br><span class="line">        &lt;aop:advisor advice-ref="myTx" pointcut-ref="txPoint"&gt;&lt;/aop:advisor&gt;</span><br><span class="line">    &lt;/aop:config&gt;</span><br><span class="line">&lt;!--<span class="number">5</span>.配置事务增强、事务属性、事务建议--&gt;</span><br><span class="line">    &lt;tx:advice id=<span class="string">"myTx"</span> transaction-manager=<span class="string">"tm"</span>&gt;</span><br><span class="line">        &lt;tx:attributes&gt;</span><br><span class="line">            &lt;tx:method name="*" rollback-for="java.lang.Exception"&gt;&lt;/tx:method&gt;</span><br><span class="line">        &lt;/tx:attributes&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/tx:advice&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-配置applicationContext-mvc-xml"><a href="#4-配置applicationContext-mvc-xml" class="headerlink" title="4.配置applicationContext-mvc.xml"></a>4.配置applicationContext-mvc.xml</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">       xmlns:mvc=<span class="string">"http://www.springframework.org/schema/mvc"</span></span><br><span class="line">       xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">       http://www.springframework.org/schema/beans/spring-beans.xsd</span></span><br><span class="line"><span class="string">       http://www.springframework.org/schema/mvc</span></span><br><span class="line"><span class="string">       http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span><br><span class="line">    &lt;context:component-scan base-<span class="keyword">package</span>=<span class="string">"com.atguigu"</span> use-<span class="keyword">default</span>-filters=<span class="string">"false"</span>&gt;</span><br><span class="line">        &lt;context:include-filter type=<span class="string">"annotation"</span> expression=<span class="string">"org.springframework.stereotype.Controller"</span>/&gt;</span><br><span class="line">    &lt;/context:component-scan&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"internalResourceViewResolver"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>&gt;</span><br><span class="line">        &lt;property name="prefix" value="/WEB-INF/pages/"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="suffix" value=".jsp"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;!--配置文件上传解析器（暂时不需要）--&gt;</span><br><span class="line">    &lt;mvc:annotation-driven/&gt;</span><br><span class="line">    &lt;mvc:<span class="keyword">default</span>-servlet-handler/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-配置mybatis全局文件"><a href="#5-配置mybatis全局文件" class="headerlink" title="5.配置mybatis全局文件"></a>5.配置mybatis全局文件</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> ?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration</span><br><span class="line">        PUBLIC <span class="string">"-//mybatis.org//DTD Config 3.0//EN"</span></span><br><span class="line">        <span class="string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;!--    &lt;environments <span class="keyword">default</span>=<span class="string">"development"</span>&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;environment id=<span class="string">"development"</span>&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;transactionManager type=<span class="string">"JDBC"</span>/&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;dataSource type=<span class="string">"POOLED"</span>&gt;--&gt;</span><br><span class="line">&lt;!--                &lt;property name=<span class="string">"driver"</span> value=<span class="string">"com.mysql.jdbc.Driver"</span>/&gt;--&gt;</span><br><span class="line">&lt;!--                &lt;property name=<span class="string">"url"</span> value=<span class="string">"jdbc:mysql://localhost:3306/mybatis_test"</span>/&gt;--&gt;</span><br><span class="line">&lt;!--                &lt;property name=<span class="string">"username"</span> value=<span class="string">"root"</span>/&gt;--&gt;</span><br><span class="line">&lt;!--                &lt;property name=<span class="string">"password"</span> value=<span class="string">"123456"</span>/&gt;--&gt;</span><br><span class="line">&lt;!--            &lt;/dataSource&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;/environment&gt;--&gt;</span><br><span class="line">&lt;!--    &lt;/environments&gt;--&gt;</span><br><span class="line">&lt;!--    &lt;mappers&gt;--&gt;</span><br><span class="line">&lt;!--        &lt;mapper resource=<span class="string">"mybatis.mapper/EmployeeDao.xml"</span>/&gt;--&gt;</span><br><span class="line">&lt;!--    &lt;/mappers&gt;--&gt;</span><br><span class="line">    &lt;settings&gt;</span><br><span class="line">        &lt;setting name=<span class="string">"lazyLoadingEnabled"</span> value=<span class="string">"true"</span>/&gt;</span><br><span class="line">        &lt;setting name=<span class="string">"aggressiveLazyLoading"</span> value=<span class="string">"false"</span>/&gt;</span><br><span class="line">        &lt;setting name=<span class="string">"cacheEnabled"</span> value=<span class="string">"true"</span>/&gt;</span><br><span class="line">    &lt;/settings&gt;</span><br><span class="line"></span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-配置mybatis的映射文件"><a href="#6-配置mybatis的映射文件" class="headerlink" title="6.配置mybatis的映射文件"></a>6.配置mybatis的映射文件</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">        PUBLIC <span class="string">"-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line">        <span class="string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>&gt;</span><br><span class="line">&lt;mapper namespace=<span class="string">"com.atguigu.dao.EmployeeDao"</span>&gt;</span><br><span class="line">    &lt;resultMap id=<span class="string">"employeeMap"</span> type=<span class="string">"com.atguigu.bean.Employee"</span>&gt;</span><br><span class="line">        &lt;id property="id" column="id"&gt;&lt;/id&gt;</span><br><span class="line">        &lt;result property="empName" column="empname"&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property="email" column="email"&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property="gender" column="gender"&gt;&lt;/result&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line">    &lt;!--<span class="function"><span class="keyword">public</span> Employee <span class="title">getEmployeeById</span><span class="params">(Integer id)</span></span>;--&gt;</span><br><span class="line">    &lt;select id=<span class="string">"getEmployeeById"</span> resultMap=<span class="string">"employeeMap"</span>&gt;</span><br><span class="line">        SELECT * from t_employee where id=#&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-写dao，service，controller，bean类"><a href="#7-写dao，service，controller，bean类" class="headerlink" title="7.写dao，service，controller，bean类"></a>7.写dao，service，controller，bean类</h4>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/11/09/SSM07(ssm%E6%95%B4%E5%90%88)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM06(MyBatis)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.043Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/11/09/collection/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          collection
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/09/SSM06(MyBatis)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSM06(MyBatis)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM06(MyBatis)/">SSM06(MyBatis)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM05(SpringMvc)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.042Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM05(SpringMvc)/">SSM05(SpringMvc)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/09/SSM04(JDBCTempate)/" class="archive-article-date">
-  	<time datetime="2020-11-09T12:58:53.041Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/09/SSM04(JDBCTempate)/">SSM04(JDBCTempate)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/20/SSM03(AOP)/" class="archive-article-date">
-  	<time datetime="2020-10-20T11:34:58.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/20/SSM03(AOP)/">SSM03(AOP)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/Lambda/" class="archive-article-date">
-  	<time datetime="2020-10-17T13:20:03.981Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/Lambda/">Lambda</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-10-17T07:21:16.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/17/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/">网络编程入门</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/13/SSM02(IOC)/" class="archive-article-date">
-  	<time datetime="2020-10-13T07:48:54.500Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/13/SSM02(IOC)/">SSM02(IOC)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/" class="archive-article-date">
-  	<time datetime="2020-10-10T12:47:03.154Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/SSM01(%E6%A6%82%E8%BF%B0%E3%80%81%E6%B3%A8%E5%85%A5)/">SSM01(概述、注入)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -464,8 +365,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
